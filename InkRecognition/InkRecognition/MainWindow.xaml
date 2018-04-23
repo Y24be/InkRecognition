@@ -1,12 +1,38 @@
 ﻿<Window x:Class="InkRecognition.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:InkRecognition"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="InkRecognition" Height="600" Width="1500" 
+    >
+    <Canvas Name="theRootCanvas" Margin="0,0,2,0">
+        <Border
+      Background="White"
+      BorderBrush="Black"
+      BorderThickness="2"
+      Height="300"
+      Width="900"
+      Canvas.Top="20"
+      Canvas.Left="550">
+            <InkCanvas Name="theInkCanvas"></InkCanvas>
+        </Border>
+        <TextBox Name="textBox1"
+      Height="30"
+      Width="225"
+      Canvas.Top="370"
+      Canvas.Left="975"></TextBox>
+        <Button
+      Height="30"
+      Width="75"
+      Canvas.Top="370"
+      Canvas.Left="1200"
+      Click="ButtonClick">文字認識</Button>
+        <Button
+      Height="30"
+      Width="75"
+      Canvas.Top="370"
+      Canvas.Left="1295"
+      Click="OutputMemo" RenderTransformOrigin="-0.288,2.972">OK</Button>
+        <Button x:Name="btnClear" Content="消去" Canvas.Left="1200" Canvas.Top="420" Width="75" Height="30" Click="BtnClear_Click"/>
+        <TextBox Name="memo" Height="500" Canvas.Left="50" TextWrapping="Wrap" Width="450" Canvas.Top="20"/>
+        <Button Content="保存" Canvas.Left="520" Canvas.Top="490" Width="130" Height="30" Click="SaveFile"/>
+    </Canvas>
 </Window>
